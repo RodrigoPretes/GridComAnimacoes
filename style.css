@@ -1,0 +1,263 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --ff-titles : 'Staatliches', sans-serif;
+  --ff-texting : 'Palanquin', sans-serif;
+
+  --bg-hd-primary: hsl(218, 17%, 62%);
+  --bg-hd-title: hsl(274, 18%, 79%);
+  --bg-bd-primary: hsl(233, 100%, 97%);
+  --bg-bd-title: hsl(312, 91%, 96%);
+
+  font-size: 62.5%;
+  --fs-body:1.6rem;
+  --fs-main-title:2rem;
+
+  --fc-primary: hsl(275, 84%, 12%);
+  --fc-hd-titles: hsl(232, 17%, 35%);
+
+ 
+
+}
+
+.page{
+  /*max-width: clamp(33rem, 30rem + 60vw, 117rem);*/
+  width: 384px;
+  padding: auto;
+  margin: auto;
+}
+
+header{
+  height: 279px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  background: var(--bg-hd-primary);
+
+  animation: topdown 1s;
+}
+header img{
+  height: 137px;
+  margin-top: 32px;
+}
+header p {
+  color: white;
+
+  font-family: var(--ff-texting);
+  
+  font-size: 1.3rem;
+  line-height: 2.0rem;
+  
+  margin: auto;
+  display: none;
+}
+.title{
+  background: var(--bg-hd-title);
+
+  width: 100%;
+  height: 49px;
+
+  padding: 8px 86px;
+  margin-top: 32px;
+}
+h1{
+  color: white;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+
+  font-family: var(--ff-titles);
+  font-size: 3.4rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.5rem;
+
+}
+
+main{
+  padding: 14px 32px 60px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  background: var(--bg-bd-primary);
+
+  animation: downtop 1s;
+}
+
+main p{
+  color: var(--fc-primary);
+
+  font-family: var(--ff-texting);
+  
+  font-size: 1.41rem;
+  line-height: 1.5rem;
+  
+  margin: 14px auto 36px; 
+  margin-bottom: 63px;
+}
+
+.card{
+  position: relative;
+  margin-bottom: 36px;
+}
+
+.card h2{
+  position:absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  display: flex;
+  flex-direction: column ;
+}
+
+.card h2 span{
+  border-radius: 2rem;
+  background-color: var(--bg-bd-title);
+
+  font-size: var(--fs-main-title);
+  font-weight: 400;
+  color: var(--fc-hd-titles);
+  font-family: var(--ff-titles);
+  line-height: 3.4rem;
+
+  padding: 0 2.3rem;
+
+
+  display: inline-flex;
+  align-items: center;
+}
+.card img:hover{
+  transform: scale(1.1);
+}
+
+footer{
+  opacity: 0;
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop{
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media(max-width:800px){
+  
+  main div:nth-child(4){
+    display: none;
+  }
+  main div:nth-child(7){
+    display: none;
+  }
+}
+@media(min-width: 800px){
+  body{
+    width: 128.0rem;
+    padding: 2% 10%;
+  }
+  .page{
+    width: 128.0rem;
+    height: 72rem;
+  }
+  .container{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+  main{
+    height: 100%;
+  }
+  header{
+    width: 377px;
+    height: 750px;
+  }
+  header h1{
+    margin-bottom: 5.2rem;
+    font-size: 3.27rem;
+  }
+  header p{
+    display: block;
+    font-size: 1.6rem;
+    line-height: 2rem;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+  }
+  main p{
+    display: none;
+  }
+  main{
+    display: grid;
+    grid-template-areas: "A B C"
+    "D E F";
+    gap: 3.2rem;
+    align-items: start;
+    background: white;
+  }
+  main div:nth-child(2){
+    grid-area: A;
+    height: 15rem;
+  }
+  main div:nth-child(3){
+    grid-area: B;
+    height: 35rem;
+  }
+  main div:nth-child(4){
+    grid-area: C;
+    height: 15rem;
+  }
+  main div:nth-child(5){
+    grid-area: D;
+    height: 35rem;
+    margin-top: -13.5rem;
+  }
+  main div:nth-child(6){
+    grid-area: E;
+    height: 15rem;
+    margin-top: 6rem;
+  }
+  main div:nth-child(7){
+    grid-area: F;
+    height: 35rem;
+    margin-top: -13.5rem;
+  }
+  .line{
+    background: var(--bg-hd-primary);
+  }
+  footer{
+    opacity: 1;
+  }
+  footer p{
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    text-align: center;
+
+    color: #4A4E69;
+    margin-top: 4rem;
+  }
+}
